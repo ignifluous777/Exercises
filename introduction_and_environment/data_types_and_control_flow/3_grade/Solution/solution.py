@@ -1,5 +1,6 @@
 print("Enter a value between 0-100 for student grade: ")
-mark = int(input())
+mark = input()
+mark = int(mark)
 
 if mark >= 90 and mark <= 100:
     grade = "A+ GRADE"

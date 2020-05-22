@@ -1,5 +1,5 @@
-L = [152, 463, 1112, 1337, -10]
-import provided_code
+# L = [152, 463, 1112, 1337, -10]
+from provided_code import L
 
 LIST_MAX = L[0]
 
