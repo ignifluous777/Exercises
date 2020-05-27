@@ -1,12 +1,10 @@
 # Code your solution here
-def shut_down(x):
-    if x=="true"or x=="True":
-        data="SHUTTING DOWN"
-    elif x=="false" or x=="False":
-        data="SHUTDOWN ABORTED"
+print("Input a boolean value (true or false): ")
+x = input()
+def shutdown(z):
+    if z == "true":
+        return "SHUTDOWN"
     else:
-        data="SORRY"
-    return data 
-x=str(input())
-result=shut_down(x)
+        return "SHUTDOWN ABORTED"
+result = shutdown(x)
 print(result)

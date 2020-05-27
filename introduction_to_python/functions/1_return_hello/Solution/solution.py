@@ -1,7 +1,8 @@
 # Code your solution here
-def hello(name):
-    data="Hello "+name
-    return data 
-name=input()
-result=hello(name)
+def hello(x):
+    data = "Hello " + x
+    return data
+print("Input your name here: ")
+name = input()
+result = hello(name)
 print(result)

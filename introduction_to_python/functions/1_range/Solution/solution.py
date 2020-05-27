@@ -1,10 +1,11 @@
 # Code your solution here
-def ranger(number):
-    if number >=0 and number <=100:
-        data="GREATNESS"
+print("Input an integer value: ")
+number = int(input())
+def numcheck(x):
+    if x <= 100:
+        data = "GREATNESS"
     else:
-        data="OOPS"
+        data = "OOPS"
     return data
-number=int(input())
-result=ranger(number)
-print(result)
+
+print(numcheck(number))

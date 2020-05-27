@@ -1,6 +1,6 @@
 # Code your solution here
-def create(val_1="Hello ",val_2="World"):
-    data=val_1+val_2
-    return data 
-result=create()
+def concat(first="Python", second="Bootcamp"):
+    data = first + second
+    return data
+result = concat()
 print(result)

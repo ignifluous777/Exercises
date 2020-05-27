@@ -1,10 +1,7 @@
 # Code your solution here
-def length(*data):
-    val=''
-    for i in data:
-        val=val+i
-    return val 
-result=length('Welcome ','To ','Byte ','Academy ')
+def varlen(*args):
+    data = [arg for arg in args]
+    return data
+result = varlen("Hello", "World", "I", "Hope", "This", "Works")
 print(result)
-
 

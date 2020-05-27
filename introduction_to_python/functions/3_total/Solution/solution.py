@@ -1,10 +1,9 @@
 # Code your solution here
-def summ(l):
+def summer(lst):
     total = 0
-    for x in l:
-        total=total+x 
+    for val in lst:
+        total += val
     return total
-
-l=[10,20,30,40,50,60]
-result=summ(l)
+l = [10, 20, 30, 40, 50, 60]
+result = summer(l)
 print(result)

@@ -1,16 +1,11 @@
 # Code your solution here
-def value(a,b,c):
-    if a>b and a>c:
-        max_value=a
-    elif b>a and b>c:
-        max_value=b
-    elif c>a and c>b:
-        max_value=c
-    else:
-        max_value=None
-    return max_value 
-a=int(input())
-b=int(input())
-c=int(input())
-result=value(a,b,c)
+print("Input three integer values: ")
+a = int(input())
+b = int(input())
+c = int(input())
+def checkmax(x, y, z):
+    max_value = max(x, y, z)
+    return max_value
+
+result = checkmax(a, b, c)
 print(result)
