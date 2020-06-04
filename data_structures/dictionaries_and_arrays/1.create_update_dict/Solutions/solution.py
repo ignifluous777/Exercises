@@ -1,8 +1,6 @@
-# Creating an empty Dictionary 
-Dict = {}
+dict = {}
+dict["test"] = "worked!"
+dict[2] = "value"
+dict["final"] = 777
 
-# Adding elements one at a time
-Dict[0] = 'Bob'
-Dict[1] = 1.0
-Dict['value_set'] = 1,2,3
-print(Dict) 
+print(dict)

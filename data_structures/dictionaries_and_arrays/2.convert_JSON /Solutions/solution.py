@@ -1,13 +1,11 @@
 import json
-def convert(dict):
-    data=json.dumps(dict)
+def convert(dictionary):
+    data = json.dumps(dictionary)
     return data
-my_dict = {"students":[{"firstName": "Nikki", "lastName": "Roysden"},
-               {"firstName": "Mervin", "lastName": "Friedland"},
-               {"firstName": "Aron ", "lastName": "Wilkins"}],
-"teachers":[{"firstName": "Amberly", "lastName": "Calico"},
-         {"firstName": "Regine", "lastName": "Agtarap"}]}
+
+my_dict = {"students": ["jon", "ad", "matt", "jakai"],
+           "teachers": ["anton", "greg", "wasif"]
+           }
 
 result = convert(my_dict)
 print(result)
-

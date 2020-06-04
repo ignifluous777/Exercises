@@ -1,6 +1,7 @@
-from array import *
-array_num = array('i', [1, 3, 5, 3, 7, 1, 9, 3])
-reverse_array = array('i')
-for i in range(len(array_num)-1,-1,-1):
-    reverse_array.append(array_num[i])
+from array import array
+
+array_num = array("i", [1, 23, 456, 7890])
+reverse_array = array("i", [])
+for element in array_num[::-1]:
+    reverse_array.append(element)
 print(reverse_array)
