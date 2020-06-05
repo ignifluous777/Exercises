@@ -14,11 +14,15 @@ class Node:
 # Node(1, Node(2, Node(3, None))).remove(2) -> Node(1, Node(2, None))
 
 def remove(ll, index):
-    if ll != None:
-        if index == 0:
-            ll = ll.rest
-        elif index == 1:
-            if ll.rest != None:
-                ll.rest = ll.rest.rest
-        else:
-            remove(ll.rest, index-1)
+    if not ll.first:
+        pass
+    elif ll.first == index:
+        ll.first = ll.rest
+    else:
+        return remove(ll.rest, index)
+
+ll = Node(1, Node(2, Node(3, None)))
+
+remove(ll, 2)
+    
+        

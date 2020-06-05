@@ -15,7 +15,12 @@ def concatenate(ll1, ll2):
     if ll1 == None:
         return ll2
     new_node = Node(ll1.first)
-    new_node.rest = ll2 if ll1.rest == None else concatenate(ll1.rest, ll2)
+    if ll1.rest == None:
+        new_node.rest = ll2
+    else:
+        concatenate(ll1.rest, ll2)
     return new_node
 
-
+ll1 = Node(1)
+ll2 = Node(2)
+ll3 = concatenate(ll1, ll2)
