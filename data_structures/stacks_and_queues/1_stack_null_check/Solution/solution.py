@@ -1,9 +1,10 @@
-# Code your solution here
-def check(stack_1):
-    if stack_1==[]:
-        return True 
-    else:
-        return False
-stack_1=[]
-result=check(stack_1)
-print(result)
+class Stack:
+    def __init__(self, head_node = None):
+        self.head_node = head_node
+
+stack_1 = Stack()
+
+if stack_1.head_node == None:
+    print(True)
+else:
+    print(False)
