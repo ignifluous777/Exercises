@@ -1,53 +1,53 @@
-class Node:
+class Tree:
+    def __init__(self, root_node=None):
+        self.root_node = root_node
 
-    def __init__(self, data):
+    def binary_search(self, value):
+        if self.root_node:
+          return self.root_node._binary_search(value)
+        return False
 
-        self.left = None
-        self.right = None
-        self.data = data
-
-# Insert method to create nodes
     def insert(self, data):
-
-        if self.data:
-            if data < self.data:
-                if self.left is None:
-                    self.left = Node(data)
-                else:
-                    self.left.insert(data)
-            elif data > self.data:
-                if self.right is None:
-                    self.right = Node(data)
-                else:
-                    self.right.insert(data)
+        if not self.root_node:
+            self.root_node = TreeNode(data)
         else:
-            self.data = data
-# findval method to compare the value with nodes
-    def findval(self, lkpval):
-        if lkpval < self.data:
+            self.root_node._insert(data)
+
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+        
+    def _insert(self, data):
+        if data < self.value:
             if self.left is None:
-                return str(lkpval)
-            return self.left.findval(lkpval)
-        elif lkpval > self.data:
+                self.left = TreeNode(data)
+            else:
+                self.left._insert(data)
+        elif data > self.value:
             if self.right is None:
-                return str(lkpval)
-            return self.right.findval(lkpval)
+                self.right = TreeNode(data)
+            else:
+                self.right._insert(data)
+        
+    def _binary_search(self, value):
+        if value == self.value:
+            return True
+        elif value < self.value and self.left:
+            return self.left._binary_search(value)
+        elif value > self.value and self.right:
+            return self.right._binary_search(value)
         else:
-            return self.data
-# Print the tree
-    def PrintTree(self):
-        if self.left:
-            self.left.PrintTree()
-        print( self.data),
-        if self.right:
-            self.right.PrintTree()
+            return False
 
+bin_tree = Tree()
+bin_tree.insert(12)
+bin_tree.insert(3)
+bin_tree.insert(6)
+bin_tree.insert(4)
+bin_tree.insert(7)
 
-root = Node(12)
-root.insert(6)
-root.insert(14)
-root.insert(3)
-ele = input()
-element = int(ele)
-result = root.findval(element)
+result = bin_tree.binary_search(7)
 print(result)
+      

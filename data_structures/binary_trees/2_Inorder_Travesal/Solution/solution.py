@@ -1,43 +1,48 @@
-class Node:
+class Tree:
+    def __init__(self, root_node=None):
+        self.root_node = root_node
 
-    def __init__(self, data):
-
-        self.left = None
-        self.right = None
-        self.data = data
-# Insert Node
     def insert(self, data):
-
-        if self.data:
-            if data < self.data:
-                if self.left is None:
-                    self.left = Node(data)
-                else:
-                    self.left.insert(data)
-            elif data > self.data:
-                if self.right is None:
-                    self.right = Node(data)
-                else:
-                    self.right.insert(data)
+        if not self.root_node:
+            self.root_node = TreeNode(data)
         else:
-            self.data = data
+            self.root_node._insert(data)
+            
+    def visit(self):
+        print(self)
+        
+    def __str__(self):
+        root = self.root_node if self.root_node else ''
+        return f'<{root}>'
+  
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
 
-# Inorder traversal
-# Left -> Root -> Right
-    def inorderTraversal(self, root):
-        res = []
-        if root:
-            res = self.inorderTraversal(root.left)
-            res.append(root.data)
-            res = res + self.inorderTraversal(root.right)
-        return res
+    def __str__(self):
+        left = f'{self.left}, ' if self.left else ''
+        right = f', {self.right}' if self.right else ''
+        return f'{left}{self.value}{right}'
+        
+    def _insert(self, data):
+        if data < self.value:
+            if self.left is None:
+                self.left = TreeNode(data)
+            else:
+                self.left._insert(data)
+        elif data > self.value:
+            if self.right is None:
+                self.right = TreeNode(data)
+            else:
+                self.right._insert(data)
 
-root = Node(27)
-root.insert(14)
-root.insert(35)
-root.insert(10)
-root.insert(19)
-root.insert(31)
-root.insert(42)
-result = root.inorderTraversal(root)
-print(result)
+bin_tree = Tree()
+bin_tree.insert(12)
+bin_tree.insert(3)
+bin_tree.insert(6)
+bin_tree.insert(4)
+bin_tree.insert(7)
+
+bin_tree.visit()
