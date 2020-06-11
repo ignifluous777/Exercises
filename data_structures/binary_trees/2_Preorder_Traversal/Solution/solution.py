@@ -1,43 +1,38 @@
-class Node:
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
 
-    def __init__(self, data):
+    def preorder(self, root):
+        if root:
+            print(root.value)
+            self.preorder(root.left)
+            self.preorder(root.right)
 
-        self.left = None
-        self.right = None
-        self.data = data
-# Insert Node
+
     def insert(self, data):
-
-        if self.data:
-            if data < self.data:
+        if self.value:
+            if data < self.value:
                 if self.left is None:
-                    self.left = Node(data)
+                    self.left = TreeNode(data)
                 else:
                     self.left.insert(data)
-            elif data > self.data:
+            elif data > self.value:
                 if self.right is None:
-                    self.right = Node(data)
+                    self.right = TreeNode(data)
                 else:
                     self.right.insert(data)
         else:
-            self.data = data
+            self.value = data
 
-# Preorder traversal
-# Root -> Left ->Right
-    def PreorderTraversal(self, root):
-        res = []
-        if root:
-            res.append(root.data)
-            res = res + self.PreorderTraversal(root.left)
-            res = res + self.PreorderTraversal(root.right)
-        return res
+bin_tree = TreeNode(27)
+bin_tree.insert(14)
+bin_tree.insert(35)
+bin_tree.insert(10)
+bin_tree.insert(19)
+bin_tree.insert(31)
+bin_tree.insert(42)
 
-root = Node(27)
-root.insert(14)
-root.insert(35)
-root.insert(10)
-root.insert(19)
-root.insert(31)
-root.insert(42)
-result = root.PreorderTraversal(root)
-print(result)
+
+bin_tree.preorder(bin_tree)
